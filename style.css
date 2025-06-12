@@ -1,0 +1,342 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Efeito Parallax */
+.parallax {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    perspective: 1px;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.layer-1 {
+    background-image: url('images/parallax-bg.jpg');
+    transform: translateZ(-1px) scale(2);
+    z-index: 1;
+}
+
+.layer-2 {
+    background-image: url('images/parallax-mid.png');
+    transform: translateZ(-0.5px) scale(1.5);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.layer-3 {
+    background-image: url('images/parallax-front.png');
+    z-index: 3;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 4;
+    width: 100%;
+    padding: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.parallax-content h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.parallax-content p {
+    font-size: 1.5rem;
+}
+
+/* Container Principal */
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: white;
+    box-shadow: 0 -5px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: -50px;
+}
+
+/* Seção da Carta */
+.letter {
+    background-color: #fff9f9;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(210, 54, 105, 0.1);
+}
+
+.letter h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #d23669;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: right;
+    margin-top: 30px;
+    color: #d23669;
+}
+
+/* Galeria de Fotos */
+.gallery {
+    margin-bottom: 40px;
+}
+
+.gallery h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #d23669;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(210, 54, 105, 0.3);
+}
+
+/* Player de Música */
+.music {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.music h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #d23669;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.player {
+    background: #fff9f9;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(210, 54, 105, 0.1);
+}
+
+.song-name {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #d23669;
+    font-size: 1.2rem;
+}
+
+/* Efeito de Pétalas */
+.petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .parallax-content h1 {
+        font-size: 3rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .parallax-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cores Românticas Atualizadas */
+:root {
+    --rosa-claro: #ffb6c1;
+    --rosa-poente: #ff69b4;
+    --rosa-profundo: #d23669;
+    --vinho-romantico: #800020;
+    --creme: #fff5f5;
+    --dourado: #d4af37;
+}
+
+/* Atualização do fundo e cores base */
+body {
+    background-color: var(--creme);
+    color: #333;
+}
+
+/* Parallax - fundo mais romântico */
+.parallax-content {
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Container principal */
+.container {
+    background: linear-gradient(to bottom, #fff9f9, #ffe6e6);
+    box-shadow: 0 -5px 30px rgba(210, 54, 105, 0.2);
+}
+
+/* Seção da carta */
+.letter {
+    background-color: white;
+    border: 1px solid var(--rosa-claro);
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.15);
+}
+
+.letter h2 {
+    color: var(--vinho-romantico);
+}
+
+.signature {
+    color: var(--vinho-romantico);
+}
+
+/* Galeria de fotos */
+.photo-grid img {
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+    border: 3px solid white;
+}
+
+.photo-grid img:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* Player de música */
+.player {
+    background: white;
+    box-shadow: 0 5px 20px rgba(255, 182, 193, 0.4);
+    border: 1px solid var(--rosa-claro);
+}
+
+.song-name {
+    color: var(--vinho-romantico);
+}
+
+/* Botões e elementos interativos */
+audio::-webkit-media-controls-panel {
+    background-color: var(--rosa-claro);
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    background-color: var(--rosa-profundo);
+    border-radius: 50%;
+}
+
+/* Efeitos de hover */
+.photo-grid img:hover {
+    transform: scale(1.05);
+    border-color: var(--rosa-poente);
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); color: var(--rosa-poente); }
+    50% { transform: scale(1.05); color: var(--vinho-romantico); }
+    100% { transform: scale(1); color: var(--rosa-poente); }
+}
+
+/* Pétalas românticas */
+.petal {
+    filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.7));
+}
+
+/* Títulos românticos */
+h1, h2 {
+    background: linear-gradient(to right, var(--rosa-profundo), var(--vinho-romantico));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+/* Rodapé romântico */
+footer {
+    background-color: var(--vinho-romantico);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    color: var(--rosa-claro);
+}
